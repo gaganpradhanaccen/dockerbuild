@@ -18,8 +18,8 @@ jobs:
 
       - name: Build and Push Dev Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage:dev1
-          docker push ${{ secrets.DOCKER_USERNAME }}/myimage:dev1
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage:dev
+          docker push ${{ secrets.DOCKER_USERNAME }}/myimage:dev
 
   build-prod:
     needs: build-dev
@@ -35,5 +35,5 @@ jobs:
 
       - name: Build and Push Prod Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage:prod1
-          docker push ${{ secrets.DOCKER_USERNAME }}/myimage:prod1
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/myimage:prod
+          docker push ${{ secrets.DOCKER_USERNAME }}/myimage:prod
